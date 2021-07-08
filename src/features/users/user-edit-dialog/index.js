@@ -31,6 +31,7 @@ const ModalComponent = ({
           userUpdated({
             id: selectedUser.id,
             username: selectedUser.username,
+            favStatus: selectedUser.favStatus,
             ...values,
           })
         }
