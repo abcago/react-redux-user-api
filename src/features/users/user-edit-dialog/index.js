@@ -8,10 +8,10 @@ const ModalComponent = ({
   userUpdated,
 }) => {
   const FormModel = [
-    { name: "name", label: "Name" },
-    { name: "email", label: "Email" },
-    { name: "phone", label: "Phone" },
-    { name: "website", label: "Website" },
+    { name: "name", label: "Name", ruleType: "string" },
+    { name: "email", label: "Email", ruleType: "email" },
+    { name: "phone", label: "Phone", ruleType: "string" },
+    { name: "website", label: "Website", ruleType: "string" },
   ];
   return (
     <Modal
@@ -40,6 +40,7 @@ const ModalComponent = ({
             key={index}
             rules={[
               {
+                type: item.ruleType,
                 required: true,
                 message: `Please input your ${item.name}!`,
               },
