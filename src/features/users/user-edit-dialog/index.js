@@ -30,8 +30,6 @@ const ModalComponent = ({
         onFinish={(values) =>
           userUpdated({
             id: selectedUser.id,
-            username: selectedUser.username,
-            favStatus: selectedUser.favStatus,
             ...values,
           })
         }

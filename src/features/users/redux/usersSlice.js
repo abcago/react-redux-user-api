@@ -50,7 +50,13 @@ export const usersSlice = createSlice({
       state.isModalVisible = false;
       state.userList = state.userList.map((user) => {
         if (user.id === action.payload.values.id) {
-          return action.payload.values;
+          return {
+            ...user,
+            name: action.payload.values.name,
+            email: action.payload.values.email,
+            phone: action.payload.values.phone,
+            website: action.payload.values.website,
+          };
         }
         return user;
       });
